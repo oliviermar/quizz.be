@@ -49,7 +49,14 @@ class CreateQuestionCommand
      */
     public static function fromData(array $data): CreateQuestionCommand
     {
-        return new self($data);
+        return new self(
+            $data['id'],
+            $data['label'],
+            $data['category_id'],
+            $data['level'],
+            $data['qcm'],
+            $data['answers']
+        );
     }
 
     public function getId(): UuidInterface
