@@ -1,0 +1,22 @@
+App\Domain\Entity\Category:
+    type: entity
+    table: category
+    id:
+        id:
+            type: string
+            generator: { strategy: NONE }
+    fields:
+        label:
+            type: string
+    manyToOne:
+        parent:
+            targetEntity: App\Domain\Entity\Category
+            inversedBy: childs
+    oneToMany:
+        childs:
+            targetEntity: App\Domain\Entity\Category
+            mappedBy: parent
+        questions:
+            targetEntity: App\Domain\Entity\Question
+            mappedBy: category 
+

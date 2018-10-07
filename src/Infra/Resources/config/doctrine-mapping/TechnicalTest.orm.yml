@@ -1,0 +1,13 @@
+App\Domain\Entity\TechnicalTest:
+    type: entity
+    table: technical_test
+    id:
+        id:
+            type: string
+            generator: { strategy: NONE }
+    manyToOne:
+        recruiter:
+            targetEntity: App\Domain\Entity\Recruiter
+    manyToMany:
+        questions:
+            targetEntity: App\Domain\Entity\Question
