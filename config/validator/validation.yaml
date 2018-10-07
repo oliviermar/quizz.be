@@ -1,0 +1,31 @@
+App\App\Command\CreateQuestionCommand:
+    properties:
+        id:
+            - NotBlank: ~
+        label:
+            - NotBlank: ~
+        level:
+            - NotBlank: ~
+        categoryId:
+            - NotBlank: ~
+
+App\App\Command\CreateCategoryCommand:
+    properties:
+        id:
+            - NotBlank: ~
+        label:
+            - NotBlank: ~
+        categoryId:
+            - NotBlank: ~
+
+App\App\Command\RegisterRecruiterCommand:
+    properties:
+        id:
+            - NotBlank: ~
+        companyName:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+            - Email: ~
+        password:
+            - NotBlank: ~

@@ -1,0 +1,18 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: false
+        public: false
+
+    App\Infra\Repository\AbstractRepository:
+        abstract: true
+        arguments:
+          - '@doctrine.orm.entity_manager'
+
+    App\Infra\Repository\:
+        resource: '../../src/Infra/Repository/'
+
+    App\Domain\Repository\QuestionRepositoryInterface: '@App\Infra\Repository\QuestionRepository'
+    App\Domain\Repository\CategoryRepositoryInterface: '@App\Infra\Repository\CategoryRepository'
+    App\Domain\Repository\TechnicalTestRepositoryInterface: '@App\Infra\Repository\TechnicalTestRepository'
+    App\Domain\Repository\RecruiterRepositoryInterface: '@App\Infra\Repository\RecruiterRepository'

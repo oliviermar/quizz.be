@@ -1,0 +1,14 @@
+App\Domain\Entity\Recruiter:
+    type: entity
+    table: recruiter
+    id:
+        id:
+            type: string
+            generator: { strategy: NONE }
+    fields:
+        companyName:
+            type: string
+        email:
+            type: string
+        password:
+            type: string

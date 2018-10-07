@@ -1,0 +1,23 @@
+App\Domain\Entity\Question:
+    type: entity
+    table: question
+    id:
+        id:
+            type: string
+            generator: { strategy: NONE }
+    fields:
+        label:
+            type: string
+        qcm:
+            type: boolean
+        level:
+            type: string
+    manyToOne:
+        category:
+            targetEntity: App\Domain\Entity\Category
+            inversedBy: questions
+    oneToMany:
+        answers:
+            targetEntity: App\Domain\Entity\Answer
+            mappedBy: question
+            cascade: ["persist"]

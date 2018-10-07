@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    App\Infra\Serializer\Normalizer\:
+        resource: '../../src/Infra/Serializer/Normalizer/'
+        tags:
+            - { name: 'serializer.normalizer' }

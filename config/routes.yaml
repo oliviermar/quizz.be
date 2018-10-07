@@ -1,3 +1,29 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+app_create_question:
+    path: /questions
+    methods: ['POST']
+    controller: App\UI\Actions\Question\CreateQuestionAction
+
+app_get_question:
+    path: /questions/{id}
+    methods: ['GET']
+    controller: App\UI\Actions\Question\GetQuestionAction
+
+app_create_category:
+    path: /categories
+    methods: ['POST']
+    controller: App\UI\Actions\Category\CreateCategoryAction
+
+app_questions_category:
+    path: /categories/{categoryId}/questions
+    methods: ['GET']
+    controller: App\UI\Actions\Question\GetQuestionListAction
+
+app_register:
+    path: /register
+    methods: ['POST']
+    controller: App\UI\Actions\Recruiter\RegisterRecruiterAction
+
+app_create_technical_test:
+    path: /technical-test
+    methods: ['POST']
+    controller: App\UI\Actions\TechnicalTest\CreateTechnicalTestAction
